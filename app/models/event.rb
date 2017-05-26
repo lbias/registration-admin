@@ -6,7 +6,7 @@ class Event < ApplicationRecord
   before_validation :generate_friendly_id, :on => :create
 
   STATUS = ["draft", "public", "private"]
-  validates_inclusion_of :status, :in => STATUS  
+  validates_inclusion_of :status, :in => STATUS
 
   def to_param
     self.friendly_id
@@ -17,4 +17,6 @@ class Event < ApplicationRecord
   def generate_friendly_id
     self.friendly_id ||= SecureRandom.uuid
   end
+
+  belongs_to :category, :optional => true
 end
