@@ -24,33 +24,44 @@
             </button>
             <a class="navbar-brand" href="/">Registration Admin</a>
           </div>
+
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="active"><%= link_to "Event List", events_path %></li>
             </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <% if current_user %>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> <%= t( "hello", :name => current_user.display_name) %> <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to('Admin Console', admin_events_path) %></li>
-                  <li><%= link_to('Change Password', edit_registration_path(:user)) %></li>
-                  <li><%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
-                </ul>
-              </li>
-            <% else %>
-              <li><%= link_to('Sign Up', new_registration_path(:user)) %></li>
-              <li><%= link_to('Log In', new_session_path(:user)) %></li>
-            <% end %>
-          </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <% if current_user %>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> <%= t( "hello", :name => current_user.display_name) %> <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to('Admin Console', admin_events_path) %></li>
+                    <li><%= link_to('Change Password', edit_registration_path(:user)) %></li>
+                    <li><%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
+                  </ul>
+                </li>
+              <% else %>
+                <li><%= link_to('Sign Up', new_registration_path(:user)) %></li>
+                <li><%= link_to('Log In', new_session_path(:user)) %></li>
+              <% end %>
+            </ul>
           </div><!--/.nav-collapse -->
+          <div class="navbar-language">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                language
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- language -->
+                <li><%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-CN" %></li>
+                <li><%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %></li>
+              </ul>
+            </li>
+          </div>
         </div><!--/.container-fluid -->
       </nav>
-
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-
-
       <%= yield %>
     </div>
   </body>
