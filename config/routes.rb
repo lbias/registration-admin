@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :events
-    resources :users
+    resources :users do
+      resource :profile, :controller => "user_profiles"
+    end 
   end
 
   root "events#index"
