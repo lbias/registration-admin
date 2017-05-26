@@ -43,6 +43,8 @@ gem 'jbuilder', '~> 2.5'
 gem "rails-i18n"
 # Select2 is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.
 gem "select2-rails"
+# help creating forms for models with nested has_many associations.
+gem "nested_form_fields"
 
 group :development, :test do
   gem 'rspec-rails'
