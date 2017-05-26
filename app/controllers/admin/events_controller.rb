@@ -11,13 +11,11 @@ class Admin::EventsController < AdminController
   def new
     @event = Event.new
     @event.tickets.build
-    @event.tickets.build
   end
 
   def create
     @event = Event.new(event_params)
-    @event.tickets.build
-    @event.tickets.build
+    @event.tickets.build if @event.tickets.empty?
     if @event.save
       redirect_to admin_events_path
     else
