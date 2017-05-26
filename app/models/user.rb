@@ -10,4 +10,7 @@ class User < ApplicationRecord
 
   has_many :memberships
   has_many :groups, :through => :memberships
+  has_one :profile
+  # 在更新 User 时，也顺便可以更新 Profile 资料
+  accepts_nested_attributes_for :profile
 end
