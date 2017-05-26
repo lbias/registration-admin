@@ -39,6 +39,9 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# A set of common locale data and translations to internationalize and/or localize your Rails applications.
+gem "rails-i18n"
+
 
 group :development, :test do
   gem 'rspec-rails'
