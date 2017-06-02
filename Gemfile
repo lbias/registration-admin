@@ -46,6 +46,7 @@ gem "select2-rails"
 # help creating forms for models with nested has_many associations.
 gem "nested_form_fields"
 gem 'bootstrap-datepicker-rails'
+gem 'ckeditor'
 
 group :development, :test do
   gem 'rspec-rails'
