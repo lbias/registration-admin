@@ -4,4 +4,4 @@
   <%= link_to "Front End", event_path(@event), :target => "_blank", :class => "btn btn-primary" %>
 </p>
 
-<%= simple_format @event.description %>
+<%= sanitize @event.description %>
